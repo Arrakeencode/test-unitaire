@@ -14,10 +14,10 @@ class OrderTest extends KernelTestCase
         $order = new Order();
         $order->setNumber('12');
         $order->setTotalPrice(10);
-        $order->setUserId($user);
+        $user->setEmail('bryan@example.com');
 
         $this->assertEquals('12', $order->getNumber());
         $this->assertEquals(10, $order->getTotalPrice());
-        $this->assertEquals($user, $order->getUserId());
+        $this->assertEquals('bryan@example.com', $user->getUserIdentifier());
     }
 }

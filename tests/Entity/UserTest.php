@@ -10,17 +10,17 @@ class UserTest extends KernelTestCase
     public function testCreateUser()
     {
         $user = new User();
-        $user->setLastName('math');
-        $user->setFirstName('math');
-        $user->setEmail('math@example.com');
-        $user->setPassword('math');
+        $user->setLastName('bryan');
+        $user->setFirstName('tremel');
+        $user->setEmail('bryan@example.com');
+        $user->setPassword('password');
         $user->setRoles(['ROLE_USER']);
 
-        $this->assertEquals('math', $user->getLastName());
-        $this->assertEquals('math', $user->getFirstName());
-        $this->assertEquals('math@example.com', $user->getEmail());
-        $this->assertEquals('math', $user->getPassword());
+        $this->assertEquals('bryan', $user->getLastName());
+        $this->assertEquals('tremel', $user->getFirstName());
+        $this->assertEquals('bryan@example.com', $user->getEmail());
+        $this->assertEquals('password', $user->getPassword());
         $this->assertContains('ROLE_USER', $user->getRoles());
-        $this->assertEquals('math@example.com', $user->getUserIdentifier());
+        $this->assertEquals('bryan@example.com', $user->getUserIdentifier());
     }
 }
