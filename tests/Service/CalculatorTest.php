@@ -1,5 +1,6 @@
-
 <?php
+
+namespace App\Tests\Service;
 
 use App\Service\Calculator;
 use App\Entity\Product;
@@ -22,7 +23,7 @@ class CalculatorTest extends KernelTestCase
 
         $totalHT = $calculator->getTotalHT($products);
 
-        $this->assertEquals(5 * 4 + 25 * 3, $totalHT);
+        $this->assertEquals(95, $totalHT);
     }
 
     public function testGetTotalTTC()
@@ -42,6 +43,6 @@ class CalculatorTest extends KernelTestCase
         
         $totalTTC = $calculator->getTotalTTC($products, $tva);
 
-        $this->assertEquals((5 * 4 + 25 * 3) * (1 + ($tva / 100)), $totalTTC);
+        $this->assertEquals(114, $totalTTC);
     }
 }
