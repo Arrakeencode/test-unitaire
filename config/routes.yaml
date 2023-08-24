@@ -5,7 +5,7 @@ home:
     
 app_logout:
     path: /logout
-    methods: POST
+    
 
 controllers:
     resource:
