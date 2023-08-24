@@ -12,10 +12,6 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        $isConnected = $this->getUser() !== null;
-
-        return $this->render('home/home.html.twig', [
-            'isConnected' => $isConnected,
-        ]);
+        return $this->render('home/home.html.twig');
     }
 }
