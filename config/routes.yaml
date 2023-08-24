@@ -1,5 +1,17 @@
+home:
+    path: /home
+    controller: App\Controller\HomeController::index
+    methods: GET
+    
+app_logout:
+    path: /logout
+    methods: POST
+
 controllers:
     resource:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+
+
