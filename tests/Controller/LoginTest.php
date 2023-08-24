@@ -49,19 +49,14 @@ class LoginTest extends WebTestCase
        // Soumettre le formulaire
        $form = $crawler->selectButton('login')->form([
         '_username' => 'test@test.com',
-        '_password' => 'testtest',
+        '_password' => 'testtests',
         ]);
         $this->client->submit($form);
-       // vérifier qu'on est bien redirigé vers la page d'accueil
-       $this->assertResponseRedirects();
+        $this->assertResponseRedirects();
         $location = $this->client->getResponse()->headers->get('Location');
-        $this->assertStringEndsWith('/home', $location);
-
-        // Suivre la redirection
+        $this->assertStringEndsWith('/login', $location);
         $crawler = $this->client->followRedirect();
-        // vérifier que la page d'accueil contient bien les bons textes
-        $this->assertSelectorTextContains('p', "Vous n'êtes pas connecté");
-       
+        $this->assertSelectorTextContains('div', "Invalid credentials.");
     }
  
 }
