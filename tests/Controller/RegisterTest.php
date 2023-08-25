@@ -47,10 +47,11 @@ class RegisterTest extends WebTestCase
         $this->assertStringEndsWith('/login', $location);
         $crawler = $this->client->followRedirect();
         $this->assertSelectorTextContains('h1', "Connexion");
-        
+
        // Vérifier qu'on retrouve bien l'utilisateur en BDD
         $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => 'teste@test.com']);
         $this->assertInstanceOf(User::class, $user);
+        $this->assertEquals('test', $user->getLastname());
     }
  
     protected function tearDown():void{
