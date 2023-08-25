@@ -10,7 +10,7 @@ jobs:
       # Installation de l’image PHP
       - image: cimg/php:8.2.4
       # Installation de l’image pour la base de données
-        - image: cimg/mariadb:10.4.21
+      - image: cimg/mariadb:10.4.21
     steps:
       # Récupération du code source depuis le dépôt Git
       - checkout
