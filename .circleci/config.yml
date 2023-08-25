@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: cimg/php:8.2.4
-      - image: cimg/mariadb:10.4.21
+      - image: cimg/mysql:5.7.39
     steps:
       - checkout
       - run:
