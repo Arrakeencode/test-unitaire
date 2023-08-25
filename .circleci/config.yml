@@ -4,6 +4,11 @@ jobs:
     docker:
       - image: cimg/php:8.2.4
       - image: mysql:5.7.39
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 
+      MYSQL_DATABASE: freya
     steps:
       - checkout
       - run:
